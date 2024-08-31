@@ -260,7 +260,7 @@ nav a {
 #authentification form label { 
 	display: flex;
 	flex-direction: column;
-	margin-top: 20px;
+	margin-top: 28px;
 	font-weight: 600;
 	font-size: 14px;
 }
@@ -282,13 +282,20 @@ nav a {
 
 #authentification form a {
 	margin-top: 20px;
-	text-decoration: none;
-	color: #1D6154;
+	color: #3D3D3D;
 	display: flex;
 	justify-content: center;
-	
+	text-decoration: underline;
+	font-weight: 500;
 }
 
 body[data-page="login"] {
 	background-color: #FFFEF8;
+}
+
+body[data-page="login"] footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 }

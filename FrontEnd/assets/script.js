@@ -82,8 +82,28 @@ const initFilters = async () => {
     }
 }
 
-//Configure l'affichage des projets et des filtres dès que la page est chargée
+const isAuth = async() => {
+    const isConnected = localStorage.getItem("token");
+    if (isConnected) {
+        document.getElementById("login-page").style.display = "none";
+        document.getElementById("logout").style.display = "block";
+    } else {
+        document.getElementById("logout").style.display = "none";
+        document.getElementById("login-page").style.display = "block";
+    }
+}
+
+const logout = () => {
+    document.getElementById("logout").addEventListener("click", () => {
+        localStorage.removeItem("token");
+        isAuth();
+    });
+}
+
+
 window.addEventListener('load', async () => {
+    isAuth();
     initProjets();
     initFilters();
+    logout();
 });
